@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jtlshopplugin>
+    <Name>Motorcycle parts finder</Name>
+    <Description>Motor parts finder for motorcycles, ATV/Quads and scooters</Description>
+    <Author>Author</Author>
+    <URL>https://example.com</URL>
+    <PluginID>cb_motor_search</PluginID>
+    <XMLVersion>100</XMLVersion>
+    <MinShopVersion>5.0.0</MinShopVersion>
+    <Icon></Icon>
+    <Version>1.0.0</Version>
+    <CreateDate>2023-10-28</CreateDate>
+    <Install>
+        <Hooks>
+            <Hook id="140">hooks/CbMotorSearchSelector.php</Hook>
+        </Hooks>
+
+		<FrontendLink>
+            <Link>
+                <Filename>cb_motor_search.php</Filename>
+                <Name>JTL Test Page</Name>
+                <Template>cb_motor_search.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>Motor-Search</Seo>
+                    <Name>MotorSearch</Name>
+                    <Title>MotorSearch</Title>
+                    <MetaTitle>MotorSearch Meta Title</MetaTitle>
+                    <MetaKeywords>Test,Page,Meta,Keyword</MetaKeywords>
+                    <MetaDescription>MotorSearch Meta Description</MetaDescription>
+                </LinkLanguage>
+            </Link>
+ 		</FrontendLink>
+        <Locales>
+			<Variable>
+				<VariableLocalized iso="GER">Auswahl deines Zweirads mit dem Teilefinder!</VariableLocalized>
+				<VariableLocalized iso="ENG">Selection of your two-wheeler with the parts finder!</VariableLocalized>
+				<VariableLocalized iso="FRE">Sélection de votre deux-roues avec l'outil de recherche de pièces!</VariableLocalized>
+				<VariableLocalized iso="SPA">Selección de su vehículo de dos ruedas con el buscador de piezas!</VariableLocalized>
+				<VariableLocalized iso="CZE">Výběr dvoukolového vozu s hledačem dílů!</VariableLocalized>
+				<VariableLocalized iso="TUR">Parça bulucu ile iki tekerlekli makinenizin seçimi</VariableLocalized>
+				<Description>Search heading</Description>
+				<Name>search_title</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Saubere Suche</VariableLocalized>
+				<VariableLocalized iso="ENG">Clear Search</VariableLocalized>
+				<VariableLocalized iso="FRE">Effacer la recherche</VariableLocalized>
+				<VariableLocalized iso="SPA">Borrar búsqueda</VariableLocalized>
+				<VariableLocalized iso="CZE">Vymazat vyhledávání</VariableLocalized>
+				<VariableLocalized iso="TUR">Aramayı Temizle</VariableLocalized>
+				<Description>Clear Search button text</Description>
+				<Name>clear_search_button_text</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Suche</VariableLocalized>
+				<VariableLocalized iso="ENG">Search</VariableLocalized>
+				<VariableLocalized iso="FRE">Search</VariableLocalized>
+				<VariableLocalized iso="SPA">Search</VariableLocalized>
+				<VariableLocalized iso="CZE">Search</VariableLocalized>
+				<VariableLocalized iso="TUR">Search</VariableLocalized>
+				<Description>Search button text</Description>
+				<Name>search_button_text</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Teilefinder</VariableLocalized>
+				<VariableLocalized iso="ENG">Ymm Search</VariableLocalized>
+				<VariableLocalized iso="FRE">Recherche Ymm</VariableLocalized>
+				<VariableLocalized iso="SPA">Búsqueda de mmm</VariableLocalized>
+				<VariableLocalized iso="CZE">Ymm Search</VariableLocalized>
+				<VariableLocalized iso="TUR">Ymm Arama</VariableLocalized>
+				<Description>Left side search box heading</Description>
+				<Name>left_search_heading</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Produkte für</VariableLocalized>
+				<VariableLocalized iso="ENG">Vehicles for</VariableLocalized>
+				<VariableLocalized iso="FRE">Véhicules pour</VariableLocalized>
+				<VariableLocalized iso="SPA">Vehículos para</VariableLocalized>
+				<VariableLocalized iso="CZE">Vozidla pro</VariableLocalized>
+				<VariableLocalized iso="TUR">Araçlar</VariableLocalized>
+				<Description>Vehicles for</Description>
+				<Name>vehicles_for</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Marke</VariableLocalized>
+				<VariableLocalized iso="ENG">Make</VariableLocalized>
+				<VariableLocalized iso="FRE">Faire</VariableLocalized>
+				<VariableLocalized iso="SPA">Hacer</VariableLocalized>
+				<VariableLocalized iso="CZE">Udělat</VariableLocalized>
+				<VariableLocalized iso="TUR">Yapmak</VariableLocalized>
+				<Description>make</Description>
+				<Name>make</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Modell</VariableLocalized>
+				<VariableLocalized iso="ENG">Model</VariableLocalized>
+				<VariableLocalized iso="FRE">Modèle</VariableLocalized>
+				<VariableLocalized iso="SPA">Modelo</VariableLocalized>
+				<VariableLocalized iso="CZE">Modelka</VariableLocalized>
+				<VariableLocalized iso="TUR">Model</VariableLocalized>
+				<Description>model</Description>
+				<Name>model</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Hubraum</VariableLocalized>
+				<VariableLocalized iso="ENG">Capacity</VariableLocalized>
+				<VariableLocalized iso="FRE">Capacité</VariableLocalized>
+				<VariableLocalized iso="SPA">Capacidad</VariableLocalized>
+				<VariableLocalized iso="CZE">Kapacita</VariableLocalized>
+				<VariableLocalized iso="TUR">Kapasite</VariableLocalized>
+				<Description>capacity</Description>
+				<Name>capacity</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Modelljahr</VariableLocalized>
+				<VariableLocalized iso="ENG">Year</VariableLocalized>
+				<VariableLocalized iso="FRE">AN</VariableLocalized>
+				<VariableLocalized iso="SPA">Año</VariableLocalized>
+				<VariableLocalized iso="CZE">Rok</VariableLocalized>
+				<VariableLocalized iso="TUR">Yıl</VariableLocalized>
+				<Description>year</Description>
+				<Name>year</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Kein Ergebnis</VariableLocalized>
+				<VariableLocalized iso="ENG">No Result found.</VariableLocalized>
+				<VariableLocalized iso="FRE">Pas de résultat</VariableLocalized>
+				<VariableLocalized iso="SPA">Sin resultados</VariableLocalized>
+				<VariableLocalized iso="CZE">Žádný výsledek</VariableLocalized>
+				<VariableLocalized iso="TUR">Sonuç yok</VariableLocalized>
+				<Description>no result</Description>
+				<Name>no_result</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Garage</VariableLocalized>
+				<VariableLocalized iso="ENG">Garage</VariableLocalized>
+				<VariableLocalized iso="FRE">Garage</VariableLocalized>
+				<VariableLocalized iso="SPA">Garaje</VariableLocalized>
+				<VariableLocalized iso="CZE">Garáž</VariableLocalized>
+				<VariableLocalized iso="TUR">Garaj</VariableLocalized>
+				<Description>Garage</Description>
+				<Name>garage</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Wählen</VariableLocalized>
+				<VariableLocalized iso="ENG">Select</VariableLocalized>
+				<VariableLocalized iso="FRE">Sélectionner</VariableLocalized>
+				<VariableLocalized iso="SPA">Seleccione</VariableLocalized>
+				<VariableLocalized iso="CZE">Garáž</VariableLocalized>
+				<VariableLocalized iso="TUR">Vybrat</VariableLocalized>
+				<Description>Select</Description>
+				<Name>select</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Löschen</VariableLocalized>
+				<VariableLocalized iso="ENG">Delete</VariableLocalized>
+				<VariableLocalized iso="FRE">Supprimer</VariableLocalized>
+				<VariableLocalized iso="SPA">Eliminar</VariableLocalized>
+				<VariableLocalized iso="CZE">Vymazat</VariableLocalized>
+				<VariableLocalized iso="TUR">Sil</VariableLocalized>
+				<Description>Delete</Description>
+				<Name>delete</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Ihre Garage ist leer. Sie können ein Fahrzeug mit dem Konfigurator hinzufügen.</VariableLocalized>
+				<VariableLocalized iso="ENG">Your garage is empty. You can add a vehicle using the configurator.</VariableLocalized>
+				<VariableLocalized iso="FRE">Votre garage est vide. Vous pouvez ajouter un véhicule à l'aide du configurateur.</VariableLocalized>
+				<VariableLocalized iso="SPA">Tu garaje está vacío. Puede agregar un vehículo usando el configurador.</VariableLocalized>
+				<VariableLocalized iso="CZE">Vaše garáž je prázdná. Pomocí konfigurátoru můžete přidat vozidlo.</VariableLocalized>
+				<VariableLocalized iso="TUR">Garajınız boş. Yapılandırıcıyı kullanarak bir araç ekleyebilirsiniz.</VariableLocalized>
+				<Description>Empty Garage</Description>
+				<Name>empty_garage</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">In der Garage können Sie Informationen zu all Ihren Fahrzeugen speichern.</VariableLocalized>
+				<VariableLocalized iso="ENG">In the garage you can store information about all your vehicles.</VariableLocalized>
+				<VariableLocalized iso="FRE">Dans le garage, vous pouvez stocker des informations sur tous vos véhicules.</VariableLocalized>
+				<VariableLocalized iso="SPA">En el garaje puede almacenar información sobre todos sus vehículos.</VariableLocalized>
+				<VariableLocalized iso="CZE">V garáži můžete ukládat informace o všech svých vozidlech.</VariableLocalized>
+				<VariableLocalized iso="TUR">Garajda tüm araçlarınızla ilgili bilgileri saklayabilirsiniz.</VariableLocalized>
+				<Description>Garage text</Description>
+				<Name>garage_text</Name>
+			</Variable>
+			 <Variable>
+				<VariableLocalized iso="GER">Passend für</VariableLocalized>
+				<VariableLocalized iso="ENG">Fits to model</VariableLocalized>
+				<VariableLocalized iso="FRE">Fits to model</VariableLocalized>
+				<VariableLocalized iso="SPA">Fits to model</VariableLocalized>
+				<VariableLocalized iso="CZE">Fits to model</VariableLocalized>
+				<VariableLocalized iso="TUR">Fits to model</VariableLocalized>
+				<Description>FitstoModel</Description>
+				<Name>fitstomodel</Name>
+			</Variable>
+			 <Variable>
+				<VariableLocalized iso="GER">Mijn voertuig</VariableLocalized>
+				<VariableLocalized iso="ENG">My Vehicle</VariableLocalized>
+				<VariableLocalized iso="FRE">Fits to model</VariableLocalized>
+				<VariableLocalized iso="SPA">Fits to model</VariableLocalized>
+				<VariableLocalized iso="CZE">Fits to model</VariableLocalized>
+				<VariableLocalized iso="TUR">Fits to model</VariableLocalized>
+				<Description>myvehicle</Description>
+				<Name>myvehicle</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Kontaktieren Sie uns für weitere Details </VariableLocalized>
+				<VariableLocalized iso="ENG">Contact us for more details</VariableLocalized>
+				<VariableLocalized iso="FRE">Contact us for more details</VariableLocalized>
+				<VariableLocalized iso="SPA">Contact us for more details</VariableLocalized>
+				<VariableLocalized iso="CZE">Contact us for more details</VariableLocalized>
+				<VariableLocalized iso="TUR">Contact us for more details</VariableLocalized>
+				<Description>Contact Message</Description>
+				<Name>contactmessage</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Es gibt leider keine Ergebnisse für deine Auswahl.</VariableLocalized>
+				<VariableLocalized iso="ENG">Sorry, there are no results for your selection.</VariableLocalized>
+				<VariableLocalized iso="FRE">Sorry, there are no results for your selection.</VariableLocalized>
+				<VariableLocalized iso="SPA">Sorry, there are no results for your selection.</VariableLocalized>
+				<VariableLocalized iso="CZE">Sorry, there are no results for your selection.</VariableLocalized>
+				<VariableLocalized iso="TUR">Sorry, there are no results for your selection.</VariableLocalized>
+				<Description>No Selection Message</Description>
+				<Name>noselectionmessage</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Ausgewähltes Fahrzeug:</VariableLocalized>
+				<VariableLocalized iso="ENG">Selected Vehicle:</VariableLocalized>
+				<VariableLocalized iso="FRE">Véhicule sélectionné:</VariableLocalized>
+				<VariableLocalized iso="SPA">Vehículo seleccionado</VariableLocalized>
+				<VariableLocalized iso="CZE">Vybrané vozidlo</VariableLocalized>
+				<VariableLocalized iso="TUR">Seçilen Araç</VariableLocalized>
+				<Description>selected_vehicle</Description>
+				<Name>selected_vehicle</Name>
+			</Variable>
+			<Variable>
+				<VariableLocalized iso="GER">Kontakt</VariableLocalized>
+				<VariableLocalized iso="ENG">Contact</VariableLocalized>
+				<VariableLocalized iso="FRE">Contact</VariableLocalized>
+				<VariableLocalized iso="SPA">Contacto</VariableLocalized>
+				<VariableLocalized iso="CZE">Kontakt</VariableLocalized>
+				<VariableLocalized iso="TUR">İletişim</VariableLocalized>
+				<Description>contact_text</Description>
+				<Name>contact_text</Name>
+			</Variable>
+
+			<Variable>
+				<VariableLocalized iso="GER">CSV file path</VariableLocalized>
+				<VariableLocalized iso="ENG">CSV file path</VariableLocalized>
+				<VariableLocalized iso="FRE">CSV file path</VariableLocalized>
+				<VariableLocalized iso="SPA">CSV file path</VariableLocalized>
+				<VariableLocalized iso="CZE">CSV file path</VariableLocalized>
+				<VariableLocalized iso="TUR">CSV file path</VariableLocalized>
+				<Description>csv_path</Description>
+				<Name>csv_path</Name>
+			</Variable>
+
+			<Variable>
+				<VariableLocalized iso="GER">CSV filename</VariableLocalized>
+				<VariableLocalized iso="ENG">CSV filename</VariableLocalized>
+				<VariableLocalized iso="FRE">CSV filename</VariableLocalized>
+				<VariableLocalized iso="SPA">CSV filename</VariableLocalized>
+				<VariableLocalized iso="CZE">CSV filename</VariableLocalized>
+				<VariableLocalized iso="TUR">CSV filename</VariableLocalized>
+				<Description>csv_name</Description>
+				<Name>csv_name</Name>
+			</Variable>
+
+			<Variable>
+				<VariableLocalized iso="GER">Categories</VariableLocalized>
+				<VariableLocalized iso="ENG">Categories</VariableLocalized>
+				<VariableLocalized iso="FRE">Categories</VariableLocalized>
+				<VariableLocalized iso="SPA">Categories</VariableLocalized>
+				<VariableLocalized iso="CZE">Categories</VariableLocalized>
+				<VariableLocalized iso="TUR">Categories</VariableLocalized>
+				<Description>categories</Description>
+				<Name>categories</Name>
+			</Variable>
+
+			<Variable>
+				<VariableLocalized iso="GER">Plugin Status</VariableLocalized>
+				<VariableLocalized iso="ENG">Plugin Status</VariableLocalized>
+				<VariableLocalized iso="FRE">Plugin Status</VariableLocalized>
+				<VariableLocalized iso="SPA">Plugin Status</VariableLocalized>
+				<VariableLocalized iso="CZE">Plugin Status</VariableLocalized>
+				<VariableLocalized iso="TUR">Plugin Status</VariableLocalized>
+				<Description>plugin_status</Description>
+				<Name>plugin_status</Name>
+			</Variable>
+		</Locales>
+        <CSS>
+            <file>
+                <name>cb_motor_search.css</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+
+			<file>
+                <name>select2.min.css</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+        </CSS>
+        <JS>
+            <file>
+                <name>cb_motor_search.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+			<file>
+                <name>select2.min.js</name>
+                <priority>1</priority>
+                <position>body</position>
+            </file>
+        </JS>
+        <Adminmenu>
+            <Customlink sort="1">
+                <Name>Settings</Name>
+            </Customlink>
+
+            <Customlink sort="2">
+                <Name>Product mapping Import</Name>
+            </Customlink>
+
+             <Customlink sort="3">
+                <Name>Product mapping</Name>
+            </Customlink>
+
+            <Customlink sort="4">
+                <Name>Motorcycle record</Name>
+            </Customlink>
+
+			<Customlink sort="5">
+                <Name>Cron</Name>
+            </Customlink>
+
+			<Customlink sort="6">
+                <Name>Documentation</Name>
+            </Customlink>
+
+        </Adminmenu> 
+        
+    </Install>
+</jtlshopplugin>
